@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Products\ProductController;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,6 +26,8 @@ Route::group(['prefix' => '{lang}', 'where' => ['kk|ru|en']], function (){
 
         Route::group(["middleware" => ["auth:sanctum"]], function(){
             Route::post("add", [ProductController::class, "addProduct"]);
+            Route::post("update/{id}", [ProductController::class, "updateProduct"]);
+            Route::delete("delete/{id}", [ProductController::class, "deleteProduct"]);
         });
     });
 });
