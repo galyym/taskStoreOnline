@@ -15,7 +15,7 @@ class ProductService
     ){}
 
     public function index(): JsonResponse {
-        $products = ProductsResource::collection(Product::with('brand')->get());
+        $products = ProductsResource::collection(Product::with(['brands', 'categories', 'subCategories'])->get());
         return $this->responder->success('Products', $products);
     }
 

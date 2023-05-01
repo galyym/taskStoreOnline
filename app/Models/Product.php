@@ -24,15 +24,15 @@ class Product extends Model
         "rating",
     ];
 
-    public function brand(){
+    public function brands(){
         return $this->belongsTo(Brand::class, 'brand', 'id');
     }
 
-    public function sub_category(){
+    public function subCategories(){
         return $this->belongsTo(SubCategory::class, 'sub_category', 'id');
     }
 
-    public function category(){
+    public function categories(){
         return $this->belongsTo(Category::class, 'category', 'id');
     }
 }
