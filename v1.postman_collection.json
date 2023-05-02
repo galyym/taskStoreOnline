@@ -1,0 +1,488 @@
+{
+	"info": {
+		"_postman_id": "32b05d9a-d82e-425d-8c63-672a5f4db9a0",
+		"name": "v1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19738142"
+	},
+	"item": [
+		{
+			"name": "Работа с товарами",
+			"item": [
+				{
+					"name": "Добавить товары",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Товар",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Товар",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/home/tobirama/Pictures/qr_saltdast.png"
+								},
+								{
+									"key": "price",
+									"value": "500",
+									"type": "text"
+								},
+								{
+									"key": "category",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "brand",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "rating",
+									"value": "2.5",
+									"type": "text"
+								},
+								{
+									"key": "sub_category",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}{{prefix}}/product/add",
+							"host": [
+								"{{url}}{{prefix}}"
+							],
+							"path": [
+								"product",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Обновить товары",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Update",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Update",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/home/tobirama/Pictures/qr_saltdast.png"
+								},
+								{
+									"key": "price",
+									"value": "6",
+									"type": "text"
+								},
+								{
+									"key": "category",
+									"value": "4",
+									"type": "text"
+								},
+								{
+									"key": "brand",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "rating",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}{{prefix}}/product/update/1",
+							"host": [
+								"{{url}}{{prefix}}"
+							],
+							"path": [
+								"product",
+								"update",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Удалить товары",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}{{prefix}}/product/delete/1",
+							"host": [
+								"{{url}}{{prefix}}"
+							],
+							"path": [
+								"product",
+								"delete",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Список товаров",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Товар",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Товар",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/home/tobirama/Pictures/qr_saltdast.png"
+								},
+								{
+									"key": "price",
+									"value": "500",
+									"type": "text"
+								},
+								{
+									"key": "category",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "brand",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "rating",
+									"value": "2.5",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}{{prefix}}/product",
+							"host": [
+								"{{url}}{{prefix}}"
+							],
+							"path": [
+								"product"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Работа с категориями",
+			"item": [
+				{
+					"name": "Список категорий c подкатегориями",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}{{prefix}}/category",
+							"host": [
+								"{{url}}{{prefix}}"
+							],
+							"path": [
+								"category"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Работа с подкатегориями",
+			"item": [
+				{
+					"name": "Список товаров с подкатегориями",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}{{prefix}}/subcategory",
+							"host": [
+								"{{url}}{{prefix}}"
+							],
+							"path": [
+								"subcategory"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Работа с корзиной",
+			"item": [
+				{
+					"name": "Добавить в корзину",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"product_id\": 4,\n    \"quantity\": 3,\n    \"price\": 800\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}{{prefix}}/basket/add",
+							"host": [
+								"{{url}}{{prefix}}"
+							],
+							"path": [
+								"basket",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Получить товаров из корзины",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}{{prefix}}/basket",
+							"host": [
+								"{{url}}{{prefix}}"
+							],
+							"path": [
+								"basket"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Удалить товар из корзины",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}{{prefix}}/basket/delete/1",
+							"host": [
+								"{{url}}{{prefix}}"
+							],
+							"path": [
+								"basket",
+								"delete",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Авторизация как пользователя",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"admin@admin.com\",\n    \"password\": \"123456\" \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}{{prefix}}/login",
+					"host": [
+						"{{url}}{{prefix}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Регистрация пользователя",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"df\",\n    \"email\": \"erkelk@dgfgf.fgfg\",\n    \"password\": \"dfdfd\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}{{prefix}}/register",
+					"host": [
+						"{{url}}{{prefix}}"
+					],
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "3|PX9ifnMkNtnQjABrJ4YG2m4i8tAOXLnd6pt4o9w2",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://127.0.0.1",
+			"type": "string"
+		},
+		{
+			"key": "prefix",
+			"value": "/v1/kk",
+			"type": "string"
+		}
+	]
+}

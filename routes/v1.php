@@ -4,6 +4,7 @@ use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Baskets\BasketController;
 use App\Http\Controllers\Categories\CategoryController;
 use App\Http\Controllers\Products\ProductController;
+use App\Http\Controllers\SubCategories\SubCategoryController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -49,5 +50,9 @@ Route::group(['prefix' => '{lang}', 'where' => ['kk|ru|en']], function (){
             Route::get("/",  [BasketController::class, "index"]);
             Route::post("add", [BasketController::class, "add"]);
             Route::post("delete/{id}", [BasketController::class, "delete"]);
+    });
+
+    Route::group(['prefix' => 'subcategory', "middleware" => ["auth:sanctum"]], function (){
+        Route::get("/{id}",  [SubCategoryController::class, "index"]);
     });
 });

@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Http\Resources\SubCategories\ProductResource;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -34,5 +35,16 @@ class Product extends Model
 
     public function categories(){
         return $this->belongsTo(Category::class, 'category', 'id');
+    }
+
+    public static function getSubCategoriesWithId($id){
+        $sub_categories = SubCategory::find($id);
+        $category = Category::find($sub_categories->category_id)->name;
+        $products = self::where("sub_category", $id)->get();
+        return [
+            "category" => $category,
+            "sub_category" => $sub_categories->name,
+            "products" => ProductResource::collection($products)
+        ];
     }
 }
